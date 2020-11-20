@@ -51,7 +51,7 @@ export class CdkToddoAppStack extends cdk.Stack {
     const updateTodo = new lambda.Function(this, 'uTodos', {
       runtime: lambda.Runtime.NODEJS_10_X,  
       code: lambda.Code.fromAsset('lambda'),
-      handler: 'updateTodos.handler'               
+      handler: 'updateTodo.handler'               
     });
     const api4 = new apigw.LambdaIntegration(updateTodo);
     const todosUpdate = api.root.addResource('updateTodo');
@@ -65,7 +65,7 @@ export class CdkToddoAppStack extends cdk.Stack {
     const deleteTodo = new lambda.Function(this, 'dTodos', {
       runtime: lambda.Runtime.NODEJS_10_X,  
       code: lambda.Code.fromAsset('lambda'),
-      handler: 'deleteTodos.handler'               
+      handler: 'deleteTodo.handler'               
     });
     const api5 = new apigw.LambdaIntegration(deleteTodo);
     const todosDelete = api.root.addResource('deleteTodo');
